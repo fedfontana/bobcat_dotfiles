@@ -1,0 +1,133 @@
+# Update zsh plugins
+alias zsh-update-plugins="find "$ZDOTDIR/plugins" -type d -exec test -e '{}/.git' ';' -print0 | xargs -I {} -0 git -C {} pull -q"
+
+# Open zsh config files in editor
+alias zshrc='nvim ~/.zshrc'
+alias zaliases='nvim ~/.config/zsh/zsh-aliases'
+alias zexports='nvim ~/.config/zsh/zsh-exports'
+
+# Colorize grep and diff output
+alias grep='grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+alias egrep='egrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+alias fgrep='fgrep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'
+alias diff='diff --color'
+
+# get top process eating memory and cpu respectively
+alias psmem='ps auxf | sort -nr -k 4 | head -5'
+alias pscpu='ps auxf | sort -nr -k 3 | head -5'
+
+alias r='ranger'
+# alias o='open'
+alias o='xdg-open'
+
+# Rust
+alias cr='cargo run'
+alias crr='cargo run --release'
+alias ct='cargo test'
+
+# Python
+alias py='python3'
+alias pip='pip3'
+
+# List
+alias ls='ls -lhH --color=auto'
+alias l='ls -lhH --color=auto'
+alias lsa='ls -AlhH --color=auto'
+alias la='ls -AlhH --color=auto'
+alias el='exa -lah --git --group-directories-first'
+
+# Git
+alias gpl='git pull'
+alias ga='git add'
+alias gaa='git add -A'
+alias gst='git status'
+alias gd='git diff'
+alias gc='git commit -m'
+alias gcam='git commit --amend'
+alias gp='git push'
+alias gco='git checkout'
+alias glog='git log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n""          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)"'
+alias gbr='open $(git remote get-url origin | sed -e "s/git\@/https:\/\//;s/:/\//2") &>/dev/null'
+alias rmgi='git clean -Xdf'
+
+# Editors
+alias c='code'
+alias v='nvim'
+alias vi='nvim'
+alias vim='nvim'
+alias neovim='nvim'
+
+alias bat='bat --color=always --decorations=always --tabs=2'
+
+# Remove all .class files in the current directory (recursively)
+alias rmj='find . -name "*.class" -exec rm -f {} \;'
+
+alias -g ...='../..'
+alias -g ....='../../..'
+
+# dotfiles management
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
+alias dota='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add'
+alias dotc='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m'
+alias dotp='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME push'
+alias dotst='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status'
+alias dotd='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff'
+
+# Usage pdfjoin outfile infile1 infile2...
+alias pdfjoin='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/MacOS/join -o'
+
+#function d () {
+#  if [[ -n $1 ]]; then
+#    dirs "$@"
+#  else
+#    dirs -v | head -10
+#  fi
+#}
+#compdef _dirs d
+
+function venv {
+    [ -d ./venv ] || python3 -m venv venv
+    source ./venv/bin/activate
+}
+
+function mckdir {
+    mkdir -p $@ && cd ${@:$#}
+}
+
+function extract
+{
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1   ;;
+            *.tar.gz)    tar xzf $1   ;;
+            *.bz2)       bunzip2 $1   ;;
+            *.rar)       unrar x $1   ;;
+            *.gz)        gunzip $1    ;;
+            *.tar)       tar xf $1    ;;
+            *.tbz2)      tar xjf $1   ;;
+            *.tgz)       tar xzf $1   ;;
+            *.zip)       unzip $1     ;;
+            *.Z)         uncompress $1;;
+            *.7z)        7z x $1      ;;
+            *.deb)       ar x $1      ;;
+            *.tar.xz)    tar xf $1    ;;
+            *.tar.zst)   unzstd $1    ;;
+            *)           echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+function diffstr
+{
+    diff <( printf '%s\n' $1 ) <( printf '%s\n' $2 )
+}
+
+function webtop
+{
+    tag=${1:-"ubuntu-xfce"}
+    port=${2:-3000}
+    docker run --rm -e PUID=1000 -e PGID=1000 -p $port:3000 lscr.io/linuxserver/webtop:$tag
+}
+

@@ -1,0 +1,17 @@
+# Function to source files if they exist
+function zsh_add_file() {
+    [ -f "$ZSHCONFIGDIR/$1" ] && source "$ZSHCONFIGDIR/$1"
+}
+
+function zsh_add_plugin() {
+    PLUGIN_NAME=$(echo $1 | cut -d "/" -f 2)
+    if [ -d "$ZSHCONFIGDIR/plugins/$PLUGIN_NAME" ]; then 
+        # For plugins
+        zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh" || \
+        zsh_add_file "plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+    else
+	echo "--- Plugin not found, cloning it from github ---"
+        git clone "https://github.com/$1.git" "$ZSHCONFIGDIR/plugins/$PLUGIN_NAME"
+    	echo "--- Done ---"
+    fi
+}

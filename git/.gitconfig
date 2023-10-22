@@ -1,3 +1,14 @@
 [user]
 	email = federico.fontana2000@gmail.com
-	name = Federico Fontana
+	name = fedfontana
+	signingkey = /home/fonta/.ssh/id_rsa.pub
+[init]
+	defaultBranch = master
+[push]
+	autoSetupRemote = true
+[core]
+	excludesfile = /home/fonta/.gitignore_global
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
