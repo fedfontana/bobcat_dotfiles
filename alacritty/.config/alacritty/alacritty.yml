@@ -71,23 +71,23 @@ window:
 # Font configuration
 font:
   normal:
-    # family: Source Code Pro Nerd Font
-    family: monospace
+    family: SourceCodePro #Nerd Font
+    # family: monospace
     style: Regular
 
   bold:
-    # family: Source Code Pro Nerd Font
-    family: monospace
+    family: Source Code Pro #Nerd Font
+    # family: monospace
     style: Bold
 
   italic:
-    # family: Source Code Pro Nerd Font
-    family: monospace
+    family: Source Code Pro #Nerd Font
+    # family: monospace
     style: Italic
 
   bold_italic:
-    # family: Source Code Pro Nerd Font
-    family: monospace
+    family: Source Code Pro #Nerd Font
+    # family: monospace
     style: Bold Italic
 
   size: 12.0
