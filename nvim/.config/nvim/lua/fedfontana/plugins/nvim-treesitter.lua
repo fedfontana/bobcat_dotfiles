@@ -35,13 +35,17 @@ return {
           "markdown",
           "markdown_inline",
           "svelte",
-          "graphql",
           "bash",
           "lua",
           "vim",
           "dockerfile",
           "gitignore",
           "query",
+          "rust",
+          "go",
+          "python",
+          "c",
+          "cpp"
         },
         incremental_selection = {
           enable = true,
