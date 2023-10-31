@@ -13,30 +13,30 @@ keymap.set("n", "<leader>nh", ":nohl<CR>", { desc = "Clear search highlights" })
 keymap.set("n", "x", '"_x')
 
 -- don't replace the text you pasted with what was in the selection
-keymap.set("x", "<leader>p", [["_dP]])
+keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without replacing selection" })
 
 -- use these to copy directly to the system buffer
 keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
 
 -- open Ex
-keymap.set("n", "<leader>pv", vim.cmd.Ex)
+keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open Ex" })
 
 -- move selected lines up and down and reformat
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
 -- maintain the current cursor location when using J
-keymap.set("n", "J", "mzJ`z")
+keymap.set("n", "J", "mzJ`z", { desc = "Join lines" })
 
 -- replace word under cursor
-keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]], { desc = "Replace word under cursor" })
 
 -- keep current line in the middle of the screen when jumping around
-keymap.set("n", "<C-d>", "<C-d>zz")
-keymap.set("n", "<C-u>", "<C-u>zz")
-keymap.set("n", "n", "nzzzv")
-keymap.set("n", "N", "Nzzzv")
+keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll half page down" })
+keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll half page up" })
+keymap.set("n", "n", "nzzzv", { desc = "Jump to next match" })
+keymap.set("n", "N", "Nzzzv", { desc = "Jump to previous match" })
 
 -- increment/decrement numbers
 keymap.set("n", "<leader>+", "<C-a>", { desc = "Increment number" }) -- increment

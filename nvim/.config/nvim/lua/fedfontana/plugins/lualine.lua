@@ -39,7 +39,9 @@ return {
                         removed = ' '
                     },
                     cond = conditions.hide_in_width
-                }, {
+                }},
+                lualine_c = {'filename'},
+                lualine_x = {{
                     'diagnostics',
                     sources = {'nvim_diagnostic'},
                     symbols = {
@@ -48,9 +50,7 @@ return {
                         hint = ' ',
                         info = ' '
                     }
-                }},
-                lualine_c = {'filename'},
-                lualine_x = {'encoding', 'filetype'},
+                }, 'encoding', 'filetype'},
                 lualine_z = {'location'}
             }
         }

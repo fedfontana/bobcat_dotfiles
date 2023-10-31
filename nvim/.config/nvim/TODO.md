@@ -6,8 +6,6 @@
    - multiline editing
    - magit-like
    - focus mode
-   - terminal
-   - undotree
 7. add new configurations to harpoon: see marked files, streamline moving to certain marked files
 8. remove file manager and use default?
 9. change dressing theme?
@@ -16,3 +14,6 @@
 12. use telescope for more stuff like moving between buffers and tabs
 13. colorscheme switcher using telescope?
 14. change startup screen
+15. lualine changes:
+   - highlight normal mode in the bottom right in some other color maybe
+   - make it so that the center of the line does not change color to a brighter one when changing to modes != normal
