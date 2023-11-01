@@ -1,8 +1,9 @@
 return {{
     'akinsho/toggleterm.nvim',
     version = "*",
+    event = {"BufReadPre", "BufNewFile"},
     opts = {
-        open_mapping = [[<space>tt]],
+        open_mapping = [[<leader>tt]],
         direction = 'float'
     }
 
