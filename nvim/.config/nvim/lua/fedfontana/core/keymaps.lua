@@ -19,9 +19,6 @@ keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without replacing selecti
 keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
 
--- open Ex
-keymap.set("n", "<leader>pv", vim.cmd.Ex, { desc = "Open Ex" })
-
 -- move selected lines up and down and reformat
 keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
 keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })

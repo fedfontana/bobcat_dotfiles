@@ -19,3 +19,7 @@
 11. use telescope for more stuff like moving between buffers and tabs
    - opening new file/buffer -> Ctrl+p
 13. change startup screen
+14. change load events for stuff. More stuff can be VeryLazy (does the "Lazy" event exist). Some, like colorizer, may only need to be loaded on certain file types
+16. plugins:
+   - rename tag for html, vue, svelte, ...
+   - tailwind lsp/plugin? 
