@@ -12,16 +12,15 @@
 3. remove format on save for all filetypes and create new shortcut to format?
 4. add new formatters
 5. add new configurations to harpoon: see marked files, streamline moving to certain marked files
-6. remove file manager and use default? Change Ex appearance?
-7. change dressing theme?
+6. change dressing theme?
    - use telescope instead of fzf for vim select
-8. check lsp configs
-9. use telescope for more stuff like moving between buffers and tabs
+7. check lsp configs
+8. use telescope for more stuff like moving between buffers and tabs
+9. change startup screen
+10. change load events for stuff. More stuff can be VeryLazy (does the "Lazy" event exist). Some, like colorizer, may only need to be loaded on certain file types
+11. plugins:
+    - tailwind lsp/plugin?
 
-- opening new file/buffer -> Ctrl+p
+broken things:
 
-13. change startup screen
-14. change load events for stuff. More stuff can be VeryLazy (does the "Lazy" event exist). Some, like colorizer, may only need to be loaded on certain file types
-15. plugins:
-
-- tailwind lsp/plugin?
+    - change copilot to accept stuff only on some other keybinding and use <tab> to accept the current menu entry for completion
