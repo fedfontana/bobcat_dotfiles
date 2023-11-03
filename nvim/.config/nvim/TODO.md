@@ -10,17 +10,9 @@
 1. write the `gbr` alias as a vim cmd/shortcut
 2. change ensure installed for treesitter and such
 3. remove format on save for all filetypes and create new shortcut to format?
-4. add new formatters
-5. add new configurations to harpoon: see marked files, streamline moving to certain marked files
-6. change dressing theme?
+4. change dressing theme?
    - use telescope instead of fzf for vim select
-7. check lsp configs
-8. use telescope for more stuff like moving between buffers and tabs
-9. change startup screen
-10. change load events for stuff. More stuff can be VeryLazy (does the "Lazy" event exist). Some, like colorizer, may only need to be loaded on certain file types
-11. plugins:
-    - tailwind lsp/plugin?
-
-broken things:
-
-    - change copilot to accept stuff only on some other keybinding and use <tab> to accept the current menu entry for completion
+5. check lsp configs
+6. use telescope for more stuff like moving between buffers and tabs
+7. change startup screen
+8. change load events for stuff. More stuff can be VeryLazy (does the "Lazy" event exist). Some, like colorizer, may only need to be loaded on certain file types

@@ -23,7 +23,7 @@ autocmd("FocusGained", {
 })
 
 -- remove trailing whitespace on save
-autocmd("BufWritePre", {
-	command = [[%s/\s\+$//e]],
-	group = utils,
-})
+-- autocmd("BufWritePre", {
+-- 	command = [[%s/\s\+$//e]],
+-- 	group = utils,
+-- })
