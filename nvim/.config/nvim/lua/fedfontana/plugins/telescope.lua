@@ -40,10 +40,10 @@ return {
 			desc = "Find string under cursor in cwd",
 		})
 
-		keymap.set("n", "<leader>pf", require("telescope.builtin").git_files, {
+		keymap.set("n", "<C-p>", require("telescope.builtin").git_files, {
 			desc = "Find files in git project",
 		})
-		keymap.set("n", "<C-p>", require("telescope.builtin").find_files, {
+		keymap.set("n", "<leader>pf", require("telescope.builtin").find_files, {
 			desc = "Find files",
 		})
 
