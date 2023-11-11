@@ -4,6 +4,10 @@
 - have more sensible (like <C-H/J/K/L>) binings to move between buffers
 - new bindings to create new splits/buffers
 - <C-/> to comment current line/ comment visual selection
+- <C-d> and <C-u> with 1/3 page same alias with `zz`
+- keybinding that does the opposite of J (join lines) at the position under the cursor (and the formats the new line at the same intdentation level of the previous one)
+
+  - see: https://groups.google.com/g/vim_use/c/uV1RtJx3FLA?pli=1
 
 - Wrap mode:
 
