@@ -92,6 +92,7 @@ return {
 			"pyright",
 			"rust_analyzer",
 			"clangd",
+			"gopls",
 		}
 
 		-- configure default servers

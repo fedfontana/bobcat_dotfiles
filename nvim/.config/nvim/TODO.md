@@ -1,3 +1,10 @@
+- <C-p> defaults to <leader>pf when not in git repo
+- J in visual mode doesnt error out when we're at the end of the file
+- change esc and tab keys when using completion as they conflict with other stuff
+- have more sensible (like <C-H/J/K/L>) binings to move between buffers
+- new bindings to create new splits/buffers
+- <C-/> to comment current line/ comment visual selection
+
 - Wrap mode:
 
   - toggle wrap
