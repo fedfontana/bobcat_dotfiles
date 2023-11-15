@@ -20,11 +20,13 @@ keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboar
 keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
 
 -- move selected lines up and down and reformat
-keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
-keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
+keymap.set("v", "J", ":<C-u>silent! move+<CR>gv=gv", { desc = "Move selected lines down" })
+keymap.set("v", "K", ":<C-u>silent! move-2<CR>gv=gv", { desc = "Move selected lines up" })
 
 -- maintain the current cursor location when using J
 keymap.set("n", "J", "mzJ`z", { desc = "Join lines" })
+
+keymap.set("n", "<S-CR>", "i<CR><Esc>", { desc = "Split lines at current position" })
 
 -- replace word under cursor
 keymap.set(
