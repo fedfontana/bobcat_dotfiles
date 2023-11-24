@@ -1,12 +1,24 @@
+case "$OSTYPE" in
+  darwin*)
+    export IS_MACOS=1
+    ;;
+  linux*)
+    export IS_LINUX=1
+    ;;
+  *)
+    ;;
+esac
+
+
 export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 export SHELL='/bin/zsh'
 export VISUAL='code'
 export TERM=xterm-256color
 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
-export ANDROID_SDK="$HOME/Library/Android/Sdk"
-export ANDROID_HOME="$HOME/Library/Android/sdk"
+[ $IS_MACOS ] && export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
+[ $IS_MACOS ] && export ANDROID_SDK="$HOME/Library/Android/Sdk"
+[ $IS_MACOS ] && export ANDROID_HOME="$HOME/Library/Android/sdk"
 export GOPATH="$HOME/go"
 
 export PATH="$HOME/.local/bin":$PATH
@@ -24,9 +36,7 @@ export PATH="$HOME/.ghcup/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/.docker/bin:$PATH"
 
-export PATH="$HOME/.emacs.d/bin:$PATH"
-
-export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
+[ $IS_MACOS ] && export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 #export MANPAGER="sh -c 'col -bx | bat --color=always --decorations=always --tabs=2 -l man -p'"
 export MANPAGER="bat --theme=\"Monokai Extended Bright\" -l man -p --tabs=2"

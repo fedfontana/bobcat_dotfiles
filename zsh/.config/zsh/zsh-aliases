@@ -17,8 +17,8 @@ alias psmem='ps auxf | sort -nr -k 4 | head -5'
 alias pscpu='ps auxf | sort -nr -k 3 | head -5'
 
 alias r='ranger'
-# alias o='open'
-alias o='xdg-open'
+[ $IS_MACOS ] && alias o='open'
+[ $IS_LINUX ] && alias o='xdg-open'
 
 # Rust
 alias cr='cargo run'
@@ -47,8 +47,8 @@ alias gcam='git commit --amend'
 alias gp='git push'
 alias gco='git checkout'
 alias glog='git log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n""          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)"'
-#TODO: on macos this uses open
-alias gbr='xdg-open $(git remote get-url origin | sed -e "s/git\@/https:\/\//;s/:/\//2") &>/dev/null'
+[ $IS_MACOS ] && alias gbr='open $(git remote get-url origin | sed -e "s/git\@/https:\/\//;s/:/\//2") &>/dev/null'
+[ $IS_LINUX ] && alias gbr='xdg-open $(git remote get-url origin | sed -e "s/git\@/https:\/\//;s/:/\//2") &>/dev/null'
 alias rmgi='git clean -Xdf'
 
 # Editors
@@ -66,16 +66,8 @@ alias rmj='find . -name "*.class" -exec rm -f {} \;'
 alias -g ...='../..'
 alias -g ....='../../..'
 
-# dotfiles management
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
-alias dota='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME add'
-alias dotc='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -m'
-alias dotp='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME push'
-alias dotst='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME status'
-alias dotd='/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff'
-
 # Usage pdfjoin outfile infile1 infile2...
-alias pdfjoin='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/MacOS/join -o'
+[ $IS_MACOS ] && alias pdfjoin='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/MacOS/join -o'
 
 #function d () {
 #  if [[ -n $1 ]]; then
