@@ -1,3 +1,12 @@
+- `<C-d>` and `<C-u>` with 1/3 page same alias with `zz`
+- shortcut to move current line one up or one down (instead of select line, move it, and then esc)
+
+- Wrap mode:
+
+  - toggle wrap
+  - change wrap row length
+  - change j and k to move inside wrapped text instead of skipping them
+
 - Colorscheme:
   - find darker colorscheme (something like ayu-dark or NVChad Yoru)
   - find a light colorscheme

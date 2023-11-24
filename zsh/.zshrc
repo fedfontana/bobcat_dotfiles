@@ -81,19 +81,19 @@ export NVM_DIR="$HOME/.nvm"
 eval "$(starship init zsh)"
 
 # Setup fzf
-if [ $MACOS = 1 ]; then
-	if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-  		PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-	fi
-	
-	# Use fzf key bindings
-	source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+# if [ $MACOS = 1 ]; then
+# 	if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
+#   		PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+# 	fi
+# 	
+# 	# Use fzf key bindings
+# 	source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+#
+#
+# 	source /Users/fonta/.docker/init-zsh.sh || true # Added by Docker Desktop
+# fi
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
-	source /Users/fonta/.docker/init-zsh.sh || true # Added by Docker Desktop
-fi
-
-
-[ -x $(command -v fzf) ] && source /usr/share/fzf/key-bindings.zsh
+# [ -x $(command -v fzf) ] && source /usr/share/fzf/key-bindings.zsh
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

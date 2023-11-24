@@ -11,7 +11,7 @@ return {
 		keymap.set("n", "<leader>hm", hm.add_file, { desc = "Mark file with harpoon" })
 		keymap.set("n", "<leader>hn", ui.nav_next, { desc = "Go to next harpoon mark" })
 		keymap.set("n", "<leader>hp", ui.nav_prev, { desc = "Go to previous harpoon mark" })
-		keymap.set("n", "<C-h>", ui.toggle_quick_menu, { desc = "Show harpoon files" })
+		keymap.set("n", "<leader>hh", ui.toggle_quick_menu, { desc = "Show harpoon files" })
 		keymap.set("n", "<C-a>", function()
 			ui.nav_file(1)
 		end, { desc = "Go to first harpoon file" })
