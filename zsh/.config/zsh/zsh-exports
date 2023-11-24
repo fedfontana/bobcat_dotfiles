@@ -34,6 +34,8 @@ export PATH="$GOPATH:$PATH"
 export PATH="$GOPATH/bin":$PATH
 export PATH="$HOME/.ghcup/bin:$PATH"
 export PATH="$HOME/scripts:$PATH"
+export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/zig:$PATH"
 export PATH="$HOME/.docker/bin:$PATH"
 
 [ $IS_MACOS ] && export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"

@@ -1,5 +1,8 @@
 - `<C-d>` and `<C-u>` with 1/3 page same alias with `zz`
+- wtf is going on with tab in normal mode? why does it open telescope?
+- colorizer should only be active on html, css, svelte, jsx, tsx, ... file types (ft in lazy.nvim i think)
 - shortcut to move current line one up or one down (instead of select line, move it, and then esc)
+- K and J only move one line, not all of the selected ones. I must have fucked something up when changing so that it doesnt error out when at the edges of a file
 
 - Wrap mode:
 
