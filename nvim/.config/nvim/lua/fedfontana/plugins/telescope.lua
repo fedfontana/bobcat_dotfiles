@@ -9,7 +9,7 @@ return {
 		},
 		"nvim-tree/nvim-web-devicons",
 	},
-	config = function(_, opts)
+	config = function()
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		telescope.setup({
@@ -17,9 +17,8 @@ return {
 				path_display = { "truncate " },
 				mappings = {
 					i = {
-						["<C-k>"] = actions.move_selection_previous, -- move to prev result
-						["<C-j>"] = actions.move_selection_next, -- move to next result
-						["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+						["<C-k>"] = actions.move_selection_previous,
+						["<C-j>"] = actions.move_selection_next,
 					},
 				},
 			},
@@ -28,7 +27,7 @@ return {
 		telescope.load_extension("fzf")
 
 		-- set keymaps
-		local keymap = vim.keymap -- for conciseness
+		local keymap = vim.keymap
 
 		keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, {
 			desc = "Fuzzy find recent files",
@@ -42,13 +41,6 @@ return {
 		keymap.set("n", "<leader>fc", require("telescope.builtin").grep_string, {
 			desc = "Find string under cursor in cwd",
 		})
-
-		-- keymap.set("n", "<C-p>", require("telescope.builtin").git_files, {
-		-- 	desc = "Find files in git project",
-		-- })
-		-- keymap.set("n", "<leader>pf", require("telescope.builtin").find_files, {
-		-- 	desc = "Find files",
-		-- })
 		keymap.set("n", "<C-i>", require("telescope.builtin").find_files, {
 			desc = "Find files",
 		})

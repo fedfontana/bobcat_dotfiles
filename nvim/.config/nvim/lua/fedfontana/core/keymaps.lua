@@ -63,3 +63,27 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "Close current tab" 
 keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
+
+-- Wrap mode
+-- local function wrap_mode()
+-- 	vim.wo.wrap = not vim.wo.wrap
+-- 	-- vim.opt.wrap = not vim.opt.wrap
+-- 	if vim.wo.wrap then
+-- 		print("wrap mode")
+-- 		keymap.set("n", "j", "gj", { silent = true, buffer = true })
+-- 		keymap.set("n", "k", "gk", { silent = true, buffer = true })
+-- 		vim.wo.linebreak = true
+-- 		vim.wo.breakindent = true
+-- 		vim.opt.textwidth = 20
+-- 		vim.wo.showbreak = "↳ "
+-- 	else
+-- 		print("no wrap mode")
+-- 		keymap.del("n", "j", { silent = true, buffer = true })
+-- 		keymap.del("n", "k", { silent = true, buffer = true })
+-- 		vim.wo.linebreak = false
+-- 		vim.wo.breakindent = false
+-- 		vim.opt.textwidth = 0
+-- 		vim.wo.showbreak = ""
+-- 	end
+-- end
+-- keymap.set("n", "<leader>ww", wrap_mode, { desc = "Toggle wrap mode" })

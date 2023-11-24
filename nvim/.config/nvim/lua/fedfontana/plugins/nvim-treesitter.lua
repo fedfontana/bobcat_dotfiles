@@ -47,6 +47,7 @@ return {
 					"c",
 					"cpp",
 					"make",
+					"zig",
 				},
 				incremental_selection = {
 					enable = true,
