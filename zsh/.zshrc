@@ -1,7 +1,5 @@
-MACOS=0
-
 # Set PATH, MANPATH, etc., for Homebrew.
-if [ $MACOS = 1 ]; then
+if [ $IS_MACOS ]; then
 	eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
@@ -77,24 +75,17 @@ zsh_add_plugin "hlissner/zsh-autopair"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(starship init zsh)"
 
-# Setup fzf
 # if [ $MACOS = 1 ]; then
-# 	if [[ ! "$PATH" == */opt/homebrew/opt/fzf/bin* ]]; then
-#   		PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
-# 	fi
-# 	
-# 	# Use fzf key bindings
-# 	source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
-#
-#
-# 	source /Users/fonta/.docker/init-zsh.sh || true # Added by Docker Desktop
+# 	source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop
 # fi
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# [ -x $(command -v fzf) ] && source /usr/share/fzf/key-bindings.zsh
+[ $IS_MACOS ] && [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ $IS_LINUX ] && [ -x $(command -v fzf) ] && source /usr/share/fzf/key-bindings.zsh
+
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
@@ -104,4 +95,3 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 # eval "$(pyenv virtualenv-init -)"
-
