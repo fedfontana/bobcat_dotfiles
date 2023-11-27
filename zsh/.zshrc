@@ -97,3 +97,11 @@ eval "$(starship init zsh)"
 # [ -x $(command -v fzf) ] && source /usr/share/fzf/key-bindings.zsh
 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+# eval "$(pyenv virtualenv-init -)"
+
