@@ -93,6 +93,7 @@ return {
 			"rust_analyzer",
 			"clangd",
 			"gopls",
+			"ocamllsp",
 		}
 
 		-- configure default servers

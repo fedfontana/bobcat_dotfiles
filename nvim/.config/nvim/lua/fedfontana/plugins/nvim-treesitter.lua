@@ -48,6 +48,7 @@ return {
 					"cpp",
 					"make",
 					"zig",
+					"ocaml",
 				},
 				incremental_selection = {
 					enable = true,

@@ -24,6 +24,7 @@ return {
 				cpp = { "clang-format" },
 				c = { "clang-format" },
 				go = { "gofmt" },
+				ocaml = { "ocamlformat" },
 			},
 			format_on_save = {
 				lsp_fallback = true,

@@ -14,7 +14,8 @@ export EDITOR='nvim'
 export GIT_EDITOR='nvim'
 export SHELL='/bin/zsh'
 export VISUAL='code'
-export TERM=xterm-256color
+# export TERM=xterm-256color
+export TERM=screen-256color
 
 [ $IS_MACOS ] && export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home"
 [ $IS_MACOS ] && export ANDROID_SDK="$HOME/Library/Android/Sdk"
@@ -37,6 +38,9 @@ export PATH="$HOME/scripts:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/zig:$PATH"
 export PATH="$HOME/.docker/bin:$PATH"
+
+#TODO: tmp
+export PATH="$HOME/uni/the-final-testination/scripts:$PATH"
 
 [ $IS_MACOS ] && export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 

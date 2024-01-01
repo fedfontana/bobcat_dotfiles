@@ -1,4 +1,4 @@
-local opt = vim.opt -- for conciseness
+local opt = vim.opt
 
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
@@ -11,7 +11,7 @@ opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
 opt.smartindent = true
 
-opt.hlsearch = false
+opt.hlsearch = true -- highlight all search results
 opt.incsearch = true
 
 opt.scrolloff = 8

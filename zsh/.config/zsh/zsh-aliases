@@ -53,7 +53,7 @@ alias glog='git log --graph --abbrev-commit --decorate --all --format=format:"%C
 alias rmgi='git clean -Xdf'
 
 # Editors
-alias c='code'
+alias c='clear'
 alias v='nvim'
 alias vi='nvim'
 alias vim='nvim'
