@@ -67,6 +67,18 @@ alias rmj='find . -name "*.class" -exec rm -f {} \;'
 alias -g ...='../..'
 alias -g ....='../../..'
 
+
+function tododadada {
+    dir=${1:-.}
+    [ -d $dir ] || { echo "Directory $dir does not exist" && return 1 } 
+    pattern=${2:-"TODO|FIXME"}
+    selection=$(rg --vimgrep $pattern $dir --color=ansi | fzf --ansi)
+    [ -z "$selection" ] && return 1
+    file=$(echo $selection | cut -d ':' -f 1)
+    line=$(echo $selection | cut -d ':' -f 2)
+    nvim +$line $file
+}
+
 # Usage pdfjoin outfile infile1 infile2...
 [ $IS_MACOS ] && alias pdfjoin='/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/MacOS/join -o'
 
