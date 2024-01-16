@@ -44,8 +44,7 @@ export PATH="$HOME/uni/the-final-testination/scripts:$PATH"
 
 [ $IS_MACOS ] && export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
-#export MANPAGER="sh -c 'col -bx | bat --color=always --decorations=always --tabs=2 -l man -p'"
-export MANPAGER="bat --theme=\"Monokai Extended Bright\" -l man -p --tabs=2"
+export MANPAGER="sh -c 'col -bx | bat --color=always --decorations=always --tabs=2 -pl man --theme=\"Monokai Extended Bright\"'"
 #export MANWIDTH=999
 
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
