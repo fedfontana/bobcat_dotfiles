@@ -24,6 +24,7 @@ alias r='ranger'
 alias cr='cargo run'
 alias crr='cargo run --release'
 alias ct='cargo test'
+alias cnt='cargo nextest run'
 
 # Python
 alias py='python3'
