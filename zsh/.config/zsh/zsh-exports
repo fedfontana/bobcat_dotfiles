@@ -39,9 +39,6 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/zig:$PATH"
 export PATH="$HOME/.docker/bin:$PATH"
 
-#TODO: tmp
-export PATH="$HOME/uni/the-final-testination/scripts:$PATH"
-
 [ $IS_MACOS ] && export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 export MANPAGER="sh -c 'col -bx | bat --color=always --decorations=always --tabs=2 -pl man --theme=\"Monokai Extended Bright\"'"
