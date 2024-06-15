@@ -32,6 +32,7 @@ alias pip='pip3'
 
 # List
 alias ls='ls -lhH --color=auto'
+alias sl='ls -lhH --color=auto'
 alias l='ls -lhH --color=auto'
 alias lsa='ls -AlhH --color=auto'
 alias la='ls -AlhH --color=auto'
