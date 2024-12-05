@@ -1,0 +1,164 @@
+[settings]
+pseudo-transparency = false
+screenchange-reload = true
+
+[colors]
+bg = #121212
+fg = #ffffff
+
+[constants]
+padding = 1
+
+[bar/base]
+molule-margin = 2
+font-0 = Material Design Icons Desktop :pixelsize=15:style:Regular;3
+font-1 = JetBrains Mono :pixelsize=12:style:Regular;3
+font-2 = Material Design Icons Desktop :pixelsize=18:style:Regular;3
+background = ${colors.bg}
+foreground = ${colors.fg}
+border-size = 0
+bottom = false
+height = 32
+radius = 0
+padding-left = 0
+padding-right = 0
+wm-restack = i3
+override-redirect = true
+fixed-center = true
+width = 100%
+modules-center = i3
+
+[bar/builtinOnly]
+inherit = bar/base
+modules-left = spacer date spacer separator spacer audio spacer microphone
+modules-right = notifications spacer backlight spacer battery spacer power spacer
+tray-position = right
+tray-detached = false
+
+[module/spacer]
+type= custom/text
+content = "  "
+
+[module/separator]
+type = custom/text
+content = "|"
+
+[module/microphone]
+type = custom/script
+interval = 0.5
+label = %output%
+exec = sh ~/.scripts/microphone_volume.sh query
+click-left = sh ~/.scripts/microphone_volume.sh mute_switch
+click-right = pavucontrol -t 4
+
+[module/fan]
+type = custom/script
+interval = 4
+label = %output%
+exec = sh ~/.scripts/fan_speed.sh
+click-right = alacritty -e watch -n 2 sensors
+
+[module/audio]
+type = custom/script
+interval = 0.5
+label = %output%
+exec = sh ~/.scripts/audio_volume.sh query
+click-left = sh ~/.scripts/audio_volume.sh mute_switch
+click-right = pavucontrol
+
+[module/date]
+type=internal/date
+interval = 1.0
+date = %d/%m/%Y
+time = %H:%M
+;date-alt = %A %d %B %Y
+;time-alt = %j
+label = %date% 󰅐 %time%
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+index-sort = true
+enable-click = false
+enable-scroll = false
+label = i3ws:
+
+[module/temperature]
+type = internal/temperature
+interval = 10
+thermal-zone = 12
+;hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon5/temp1_input
+;Package id 0:  +48.0°C  (high = +100.0°C, crit = +100.0°C)
+base-temperature = 20
+warn-temperature = 80
+label = %temperature-c%
+label-warn = %temperature-c%
+ramp-0 = %{F#fff23d}󱃃%{F-}
+ramp-1 = %{F#ed7632}󰔏%{F-}
+ramp-2 = %{F#ff3224}󱃂%{F-}
+ramp-3 = %{F#ff3224}󰸁%{F-}
+format = <ramp><label>
+format-warm = <ramp><label-warn>
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+poll-interval = 5
+full-at = 99
+; %consumption% (discharge rate in watts) is also available
+label-charging = 󰚥 %percentage%%
+label-discharging = %percentage%%
+label-full = %percentage%%
+ramp-capacity-0 = %{F#ff3224}󰂎%{F-}
+ramp-capacity-1 = %{F#ff3224}󰁺%{F-}
+ramp-capacity-2 = %{F#ff3224}󰁻%{F-}
+ramp-capacity-3 = %{F#ed7632}󰁼%{F-}
+ramp-capacity-4 = %{F#ed7632}󰁽%{F-}
+ramp-capacity-5 = %{F#9ede37}󰁾%{F-}
+ramp-capacity-6 = %{F#9ede37}󰁿%{F-}
+ramp-capacity-7 = %{F#4bc942}󰂀%{F-}
+ramp-capacity-8 = %{F#4bc942}󰂁%{F-}
+ramp-capacity-9 = %{F#1db954}󰂂%{F-}
+ramp-capacity-10 = %{F#1db954}󰁹%{F-}
+format-charging = <label-charging>
+format-discharging = <ramp-capacity><label-discharging>
+format-full = <ramp-capacity><label-full>
+
+[module/pulseaudio]
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+use-ui-max = false
+interval = 5
+label-volume = %percentage%%
+label-muted = 󰸈
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀
+ramp-volume-2 = 󰕾
+format-volume = <ramp-volume><label-volume>
+format-muted = <label-muted>
+click-right = pavucontrol
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+enable-scroll = false
+format = <label>
+label = %{F#4dd2ff}󱎖%{F-}%percentage%%
+
+[module/cpu]
+type = internal/cpu
+interval = 2.0
+label = %{F#0071c5}󰻠 %{F-}%percentage%%
+
+[module/ram]
+type = internal/memory
+interval = 3.0
+#label = 󰍛 %gb_used%/%gb_total%
+label = %{F#3a9c3d}󰍛%{F-}%gb_used%
+
+[module/filesystem]
+type = internal/fs
+mount-0 = /
+interval = 30
+fixed-values = true
+label-mounted = %{F#b5b7bb}󰋊%{F-} %percentage_free%%
