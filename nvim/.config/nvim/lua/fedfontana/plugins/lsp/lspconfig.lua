@@ -88,7 +88,6 @@ return {
 			"cssls",
 			"tailwindcss",
 			"svelte",
-			"prismals",
 			"pyright",
 			"rust_analyzer",
 			"clangd",
