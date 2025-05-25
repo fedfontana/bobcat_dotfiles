@@ -4,6 +4,7 @@ return {
 	event = "VeryLazy",
 	opts = {
 		delay = 400,
+		preset = "helix",
 		filter = function(mapping)
 			return mapping.desc ~= "Disable space (leader) in normal mode"
 		end,
