@@ -1,4 +1,5 @@
-theme = ayu
+theme = dark:ayu, light:ayu_light
+theme = dark:catppuccin-mocha, light:catppuccin-latte
 
 font-family = SeriousShanns Nerd Font Mono
 font-feature = 
