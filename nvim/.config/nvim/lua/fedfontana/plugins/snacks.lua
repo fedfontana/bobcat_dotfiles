@@ -121,14 +121,10 @@ return {
 				},
 			},
 			-- explorer = { enabled = true }, -- TODO: probably just use this instead of the old one
-			-- FIXME: also check these and the others at: https://github.com/folke/snacks.nvim?tab=readme-ov-file#-features
-			-- indent = { enabled = true },
-			-- quickfile = { enabled = true },
-			-- scope = { enabled = true },
 		},
 
 		init = function()
-			vim.api.nvim_create_autocmd("snacks_rename_file_with_oil", {
+			vim.api.nvim_create_autocmd("User", {
 				pattern = "OilActionsPost",
 				callback = function(event)
 					if event.data.actions.type == "move" then
