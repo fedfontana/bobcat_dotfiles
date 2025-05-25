@@ -63,7 +63,6 @@ return {
 		-- Set to false to disable all of the above keymaps
 		use_default_keymaps = true,
 		view_options = {
-
 			show_hidden = true,
 			-- Customize the highlight group for the file name
 			highlight_filename = function(entry, is_hidden, is_link_target, is_link_orphan)
@@ -96,7 +95,7 @@ return {
 	},
 	keys = {
 		{
-			"<leader>eo",
+			"<leader>ee",
 			function()
 				require("oil").toggle_float()
 			end,
