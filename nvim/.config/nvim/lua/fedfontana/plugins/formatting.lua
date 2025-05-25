@@ -1,10 +1,12 @@
 return {
 	"stevearc/conform.nvim",
+	-- FIXME: should probably be lazy?
 	lazy = true,
 	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
 	config = function()
 		local conform = require("conform")
 
+		-- TODO: move to `opts` and `keys` sections
 		conform.setup({
 			formatters_by_ft = {
 				javascript = { "prettier" },
@@ -27,18 +29,19 @@ return {
 				ocaml = { "ocamlformat" },
 			},
 			format_on_save = {
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
+				lsp_fallback = "fallback",
+				async = true,
+				timeout_ms = 500,
 			},
 		})
 
+		-- TODO: choose a better keybinding
 		vim.keymap.set({ "n", "v" }, "<leader>mp", function()
 			conform.format({
-				lsp_fallback = true,
-				async = false,
-				timeout_ms = 1000,
+				lsp_fallback = "fallback",
+				async = true,
+				timeout_ms = 500,
 			})
-		end, { desc = "Format file or range (in visual mode)" })
+		end, { desc = "Format file (or range in visual mode)" })
 	end,
 }

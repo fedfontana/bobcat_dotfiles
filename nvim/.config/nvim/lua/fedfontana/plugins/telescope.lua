@@ -29,6 +29,7 @@ return {
 		-- set keymaps
 		local keymap = vim.keymap
 
+		-- TODO: move keybindings to `keys` section
 		keymap.set("n", "<leader>fr", require("telescope.builtin").oldfiles, {
 			desc = "Fuzzy find recent files",
 		})
@@ -50,6 +51,16 @@ return {
 		end, {
 			desc = "Find files",
 		})
+
+		-- FIXME: change these keybindings to align with others
+		keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "Search help tags" })
+
+		keymap.set("n", "<leader>sc", require("telescope.builtin").git_bcommits, { desc = "[S]earch buffer [C]ommits" })
+
+		keymap.set("n", "<leader>ss", function()
+			require("telescope.builtin").spell_suggest(require("telescope.themes").get_dropdown({ previewer = false }))
+		end, { desc = "Spell suggestions search" })
+		-- end FIXME:
 
 		-- cache the results of "git rev-parse"
 		local is_inside_work_tree = {}

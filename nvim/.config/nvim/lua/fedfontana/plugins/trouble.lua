@@ -5,34 +5,47 @@ return {
 	opts = {
 		use_diagnostic_signs = true,
 	},
-	config = function()
-		local keymap = vim.keymap
-		local trouble = require("trouble")
-
-		keymap.set("n", "<leader>D", function()
-			trouble.toggle()
-		end, {
+	keys = {
+		-- FIXME: check what these do and only keep the useful
+		{
+			"<leader>D",
+			function()
+				require("trouble").toggle()
+			end,
+			mode = "n",
 			desc = "Toggle trouble",
-		})
-		keymap.set("n", "<leader>xw", function()
-			trouble.toggle("workspace_diagnostics")
-		end, {
+		},
+		{
+			"<leader>xw",
+			function()
+				require("trouble").toggle("workspace_diagnostics")
+			end,
+			mode = "n",
 			desc = "Toggle workspace diagnostics",
-		})
-		keymap.set("n", "<leader>xd", function()
-			trouble.toggle("document_diagnostics")
-		end, {
+		},
+		{
+			"<leader>xd",
+			function()
+				require("trouble").toggle("document_diagnostics")
+			end,
+			mode = "n",
 			desc = "Toggle document diagnostics",
-		})
-		keymap.set("n", "<leader>xq", function()
-			trouble.toggle("quickfix")
-		end, {
+		},
+		{
+			"<leader>xq",
+			function()
+				require("trouble").toggle("quickfix")
+			end,
+			mode = "n",
 			desc = "Toggle quickfix",
-		})
-		keymap.set("n", "<leader>xl", function()
-			trouble.toggle("loclist")
-		end, {
+		},
+		{
+			"<leader>xl",
+			function()
+				require("trouble").toggle("loclist")
+			end,
+			mode = "n",
 			desc = "Toggle loclist",
-		})
-	end,
+		},
+	},
 }

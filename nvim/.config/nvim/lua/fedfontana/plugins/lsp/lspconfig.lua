@@ -84,7 +84,7 @@ return {
 
 		local default_config_servers = {
 			"html",
-			"tsserver",
+			"ts_ls",
 			"cssls",
 			"tailwindcss",
 			"svelte",

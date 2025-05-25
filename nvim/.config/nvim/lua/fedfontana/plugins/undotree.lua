@@ -1,7 +1,18 @@
 return {
-    "mbbill/undotree",
-    event = {"BufReadPre", "BufNewFile"},
-    config = function()
-        vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle, {desc = "Toggle undotree"})
-    end,
+	"mbbill/undotree",
+	event = { "BufReadPre", "BufNewFile" },
+	keys = {
+		{
+			"<leader>u",
+			vim.cmd.UndotreeToggle,
+			mode = "n",
+			desc = "Toggle undotree",
+		},
+	},
+	config = function()
+		if vim.fn.has("persistent_undo") == 1 then
+			vim.opt.undodir = vim.fn.expand("~/.config/nvim/.undodir")
+			vim.opt.undofile = true
+		end
+	end,
 }
