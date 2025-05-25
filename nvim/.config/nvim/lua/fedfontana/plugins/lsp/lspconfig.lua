@@ -103,6 +103,12 @@ return {
 			})
 		end
 
+		lspconfig["eslint"].setup({
+			capabilities = capabilities,
+			on_attach = on_attach,
+			cmd = { "vscode-eslint-language-server", "--stdio", "--no-warn-ignored" },
+		})
+
 		lspconfig["svelte"].setup({
 			capabilities = capabilities,
 			on_attach = function(client, bufnr)
