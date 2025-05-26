@@ -35,13 +35,6 @@ keymap.set("x", "<leader>p", [["_dP]], { desc = "Paste without replacing selecti
 keymap.set({ "n", "v" }, "<leader>y", [["+y]], { desc = "Copy to system clipboard" })
 keymap.set("n", "<leader>Y", [["+Y]], { desc = "Copy line to system clipboard" })
 
--- TODO: replace these with the plugin from Snacks.nvim
--- move selected lines up and down and reformat
-keymap.set("v", "J", ":<C-u>silent! move+<CR>gv=gv", { desc = "Move selected lines down" })
-keymap.set("v", "K", ":<C-u>silent! move-2<CR>gv=gv", { desc = "Move selected lines up" })
-keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { desc = "Move selected block down" })
-keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selected block up" })
-
 -- maintain the current cursor location when using J
 keymap.set("n", "J", "mzJ`z", { desc = "Join lines" })
 
