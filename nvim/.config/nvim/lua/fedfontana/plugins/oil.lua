@@ -7,7 +7,9 @@ vim.api.nvim_create_autocmd("FileType", {
 
 return {
 	"stevearc/oil.nvim",
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	dependencies = {
+		"echasnovski/mini.icons",
+	},
 	opts = {
 		-- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
 		-- Set to false if you want some other plugin (e.g. netrw) to open when you edit directories.

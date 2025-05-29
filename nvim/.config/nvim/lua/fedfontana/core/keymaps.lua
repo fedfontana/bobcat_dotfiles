@@ -80,10 +80,10 @@ keymap.set("n", "%", "%zz", { desc = "Jump to matching bracket" })
 keymap.set("n", "*", "*zz", { desc = "Search for word under cursor" })
 keymap.set("n", "#", "#zz", { desc = "Search backward for word under cursor" })
 
--- FIXME: do I really need these?
 -- Quickfix navigation
--- vim.keymap.set("n", "<leader>cn", ":cnext<cr>zz", { desc = "Go to next quickfix item and center" })
--- vim.keymap.set("n", "<leader>cp", ":cprevious<cr>zz", { desc = "Go to previous quickfix item and center" })
+vim.keymap.set("n", "<leader>cn", ":cnext<cr>zz", { desc = "Go to next quickfix item and center" })
+vim.keymap.set("n", "<leader>cp", ":cprevious<cr>zz", { desc = "Go to previous quickfix item and center" })
+-- FIXME: do I really need these?
 -- vim.keymap.set("n", "<leader>co", ":copen<cr>zz", { desc = "Open quickfix list and center" })
 -- vim.keymap.set("n", "<leader>cc", ":cclose<cr>zz", { desc = "Close quickfix list" })
 
